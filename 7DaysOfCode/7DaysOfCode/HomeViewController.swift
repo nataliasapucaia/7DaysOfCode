@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     let movies: [Movie] = [
         Movie(id: 1, title: "Órfã 2: A Origem", releaseDate: "2022-07-27", image: nil, overview: "", voteAverage: 7.2),
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: CodeView {
+extension HomeViewController: CodeView {
     func buildVierHierarchy() {
 //        moviesTableView.addSubview(movieTitle)
 
@@ -78,20 +78,19 @@ extension ViewController: CodeView {
     }
 
     func setUpAdditionalConfiguration() {
-        let topColor = UIColor(red: 46.0/255, green: 19.0/255, blue: 113.0/255, alpha: 1)
-        let bottomColor = UIColor(red: 19/255, green: 11/255, blue: 43/255, alpha: 1)
+
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.view.bounds
-        gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
+        gradientLayer.colors = [UIColor.topColor.cgColor, UIColor.bottomColor.cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate {
 
 }
 
-extension ViewController: UITableViewDataSource {
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }

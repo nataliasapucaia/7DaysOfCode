@@ -19,6 +19,8 @@
 		D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C59F297B032B0067C223 /* UIColor+Utils.swift */; };
 		D105C5A4297B107F0067C223 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5A3297B107F0067C223 /* MovieTableViewCell.swift */; };
 		D105C5A9297ECCC60067C223 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5A8297ECCC60067C223 /* String+Utils.swift */; };
+		D105C5AC297EFA860067C223 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5AB297EFA860067C223 /* Network.swift */; };
+		D105C5AE297EFC300067C223 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D105C5AD297EFC300067C223 /* Keys.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		D105C59F297B032B0067C223 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		D105C5A3297B107F0067C223 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		D105C5A8297ECCC60067C223 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		D105C5AB297EFA860067C223 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		D105C5AD297EFC300067C223 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 		D105C57F297AC7280067C223 /* 7DaysOfCode */ = {
 			isa = PBXGroup;
 			children = (
+				D105C5AA297EFA750067C223 /* Network */,
 				D105C5A2297B0F650067C223 /* Model */,
 				D105C5A1297B0F550067C223 /* View */,
 				D105C59E297B030E0067C223 /* Utils */,
@@ -77,6 +82,7 @@
 				D105C589297AC72A0067C223 /* Assets.xcassets */,
 				D105C58B297AC72A0067C223 /* LaunchScreen.storyboard */,
 				D105C58E297AC72A0067C223 /* Info.plist */,
+				D105C5AD297EFC300067C223 /* Keys.plist */,
 			);
 			path = 7DaysOfCode;
 			sourceTree = "<group>";
@@ -115,6 +121,14 @@
 				D105C59C297ADC030067C223 /* MovieModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D105C5AA297EFA750067C223 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D105C5AB297EFA860067C223 /* Network.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +191,7 @@
 			files = (
 				D105C58D297AC72A0067C223 /* LaunchScreen.storyboard in Resources */,
 				D105C59B297AD3260067C223 /* SF-Pro.ttf in Resources */,
+				D105C5AE297EFC300067C223 /* Keys.plist in Resources */,
 				D105C59A297AD3220067C223 /* SF-Pro-Italic.ttf in Resources */,
 				D105C58A297AC72A0067C223 /* Assets.xcassets in Resources */,
 			);
@@ -194,6 +209,7 @@
 				D105C5A4297B107F0067C223 /* MovieTableViewCell.swift in Sources */,
 				D105C59D297ADC030067C223 /* MovieModel.swift in Sources */,
 				D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */,
+				D105C5AC297EFA860067C223 /* Network.swift in Sources */,
 				D105C583297AC7280067C223 /* SceneDelegate.swift in Sources */,
 				D105C5A9297ECCC60067C223 /* String+Utils.swift in Sources */,
 				D105C595297ACD390067C223 /* ViewCode.swift in Sources */,

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		930ACF888D71EC3BC6F18B36 /* Pods_7DaysOfCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFFF92E11F77F8BD3975D928 /* Pods_7DaysOfCode.framework */; };
 		D105C581297AC7280067C223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C580297AC7280067C223 /* AppDelegate.swift */; };
 		D105C583297AC7280067C223 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C582297AC7280067C223 /* SceneDelegate.swift */; };
 		D105C585297AC7280067C223 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C584297AC7280067C223 /* HomeViewController.swift */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BC4AF3648D8EB1C0E681D44 /* Pods-7DaysOfCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-7DaysOfCode.release.xcconfig"; path = "Target Support Files/Pods-7DaysOfCode/Pods-7DaysOfCode.release.xcconfig"; sourceTree = "<group>"; };
+		3E99BEA678100E8076F29D4D /* Pods-7DaysOfCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-7DaysOfCode.debug.xcconfig"; path = "Target Support Files/Pods-7DaysOfCode/Pods-7DaysOfCode.debug.xcconfig"; sourceTree = "<group>"; };
 		D105C57D297AC7280067C223 /* 7DaysOfCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 7DaysOfCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D105C580297AC7280067C223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D105C582297AC7280067C223 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +45,7 @@
 		D105C5AB297EFA860067C223 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D105C5AD297EFC300067C223 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		D105C5B1297F05360067C223 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		EFFF92E11F77F8BD3975D928 /* Pods_7DaysOfCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_7DaysOfCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +53,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				930ACF888D71EC3BC6F18B36 /* Pods_7DaysOfCode.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		708CBAC003CBD9AA957D1759 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E99BEA678100E8076F29D4D /* Pods-7DaysOfCode.debug.xcconfig */,
+				0BC4AF3648D8EB1C0E681D44 /* Pods-7DaysOfCode.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D105C574297AC7280067C223 = {
 			isa = PBXGroup;
 			children = (
 				D105C57F297AC7280067C223 /* 7DaysOfCode */,
 				D105C57E297AC7280067C223 /* Products */,
+				708CBAC003CBD9AA957D1759 /* Pods */,
+				D8E9130F5290DDD3B2BACDE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +159,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D8E9130F5290DDD3B2BACDE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFFF92E11F77F8BD3975D928 /* Pods_7DaysOfCode.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,9 +174,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D105C591297AC72A0067C223 /* Build configuration list for PBXNativeTarget "7DaysOfCode" */;
 			buildPhases = (
+				14C95E9F061FEB55080F02B1 /* [CP] Check Pods Manifest.lock */,
 				D105C579297AC7280067C223 /* Sources */,
 				D105C57A297AC7280067C223 /* Frameworks */,
 				D105C57B297AC7280067C223 /* Resources */,
+				F85CC3374F1169DBEE4DED85 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -209,6 +236,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14C95E9F061FEB55080F02B1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-7DaysOfCode-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F85CC3374F1169DBEE4DED85 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-7DaysOfCode/Pods-7DaysOfCode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-7DaysOfCode/Pods-7DaysOfCode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-7DaysOfCode/Pods-7DaysOfCode-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D105C579297AC7280067C223 /* Sources */ = {
@@ -358,6 +427,7 @@
 		};
 		D105C592297AC72A0067C223 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E99BEA678100E8076F29D4D /* Pods-7DaysOfCode.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -385,6 +455,7 @@
 		};
 		D105C593297AC72A0067C223 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BC4AF3648D8EB1C0E681D44 /* Pods-7DaysOfCode.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

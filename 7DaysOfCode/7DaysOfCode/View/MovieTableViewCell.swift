@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieTableViewCell: UITableViewCell {
     // MARK: Instance Properties
@@ -17,7 +18,6 @@ class MovieTableViewCell: UITableViewCell {
     let moviePosterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.backgroundColor = .red
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 18
 
@@ -60,6 +60,12 @@ class MovieTableViewCell: UITableViewCell {
     public func setupData(with movie: Movie) {
         titleLabel.text = movie.title
         releaseDateLabel.text = "Lançamento: \(movie.releaseDate.formatDate())"
+        configureImage(imageURL: movie.posterPath)
+    }
+
+    private func configureImage(imageURL: String) {
+        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(imageURL)")
+        moviePosterImageView.kf.setImage(with: url)
     }
 }
 

@@ -11,7 +11,6 @@ class HomeViewController: UIViewController {
 
     // MARK: Views
     let viewModel: HomeViewModel
-    var movies: [Movie]? = nil
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -47,7 +46,6 @@ class HomeViewController: UIViewController {
         viewModel.fetchMovies()
         setupView()
         configureTableView()
-
     }
 
     // MARK: Initialization
@@ -75,6 +73,21 @@ class HomeViewController: UIViewController {
         gradientLayer.colors = [UIColor.topColor.cgColor, UIColor.bottomColor.cgColor]
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
+
+    //se não tivesse viewModel
+//    private var requestNetworking = Network()
+//    private var movies: [Movie] = [] {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        }
+//    }
+//    private func getPopularMovies() {
+//        requestNetworking.fetchPopularMovies { movies in
+//            self.movies = movies
+//        }
+//    }
 }
 
 // MARK: View Code
@@ -120,7 +133,6 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = moviesTableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier, for: indexPath) as! MovieTableViewCell
-
         cell.setupData(with: viewModel.movies[indexPath.row])
 
         return cell

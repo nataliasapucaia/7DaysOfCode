@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.makeKeyAndVisible()
         window?.windowScene = windowScene
-        window?.rootViewController = HomeViewController()
+        let viewModel = HomeViewModel()
+        window?.rootViewController = HomeViewController(viewModel: viewModel)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

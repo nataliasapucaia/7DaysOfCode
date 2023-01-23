@@ -21,6 +21,7 @@
 		D105C5A9297ECCC60067C223 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5A8297ECCC60067C223 /* String+Utils.swift */; };
 		D105C5AC297EFA860067C223 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5AB297EFA860067C223 /* Network.swift */; };
 		D105C5AE297EFC300067C223 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D105C5AD297EFC300067C223 /* Keys.plist */; };
+		D105C5B2297F05360067C223 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5B1297F05360067C223 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		D105C5A8297ECCC60067C223 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		D105C5AB297EFA860067C223 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		D105C5AD297EFC300067C223 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
+		D105C5B1297F05360067C223 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				D105C5AA297EFA750067C223 /* Network */,
 				D105C5A2297B0F650067C223 /* Model */,
 				D105C5A1297B0F550067C223 /* View */,
+				D105C5B0297F05160067C223 /* ViewModel */,
 				D105C59E297B030E0067C223 /* Utils */,
 				D105C597297AD20E0067C223 /* Fonts */,
 				D105C580297AC7280067C223 /* AppDelegate.swift */,
@@ -129,6 +132,14 @@
 				D105C5AB297EFA860067C223 /* Network.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		D105C5B0297F05160067C223 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D105C5B1297F05360067C223 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +218,7 @@
 				D105C585297AC7280067C223 /* HomeViewController.swift in Sources */,
 				D105C581297AC7280067C223 /* AppDelegate.swift in Sources */,
 				D105C5A4297B107F0067C223 /* MovieTableViewCell.swift in Sources */,
+				D105C5B2297F05360067C223 /* HomeViewModel.swift in Sources */,
 				D105C59D297ADC030067C223 /* MovieModel.swift in Sources */,
 				D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */,
 				D105C5AC297EFA860067C223 /* Network.swift in Sources */,

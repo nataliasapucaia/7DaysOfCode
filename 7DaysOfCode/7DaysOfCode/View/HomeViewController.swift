@@ -10,12 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
 
     // MARK: Views
-    let movies: [Movie] = [
-        Movie(id: 1, title: "Órfã 2: A Origem", releaseDate: "2022-07-27", image: nil, overview: "", posterPath: "", voteAverage: 7.2),
-        Movie(id: 2, title: "Minions 2: A Origem de Gru", releaseDate: "2022-06-29", image: nil, overview: "", posterPath: "", voteAverage: 7.8),
-        Movie(id: 3, title: "Thor: Amor e Trovão", releaseDate: "2022-07-06", image: nil, overview: "", posterPath: "", voteAverage: 6.8),
-        Movie(id: 4, title: "Avatar", releaseDate: "2009-12-18", image: nil, overview: "", posterPath: "", voteAverage: 8.8),
-    ]
+    let viewModel: HomeViewModel
+    var movies: [Movie]? = nil
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -48,13 +44,21 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel.fetchMovies()
         setupView()
         configureTableView()
-        let network = Network()
-        network.fetchPopularMovies { movies in
-            print(movies)
-        }
+
+    }
+
+    // MARK: Initialization
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: Functions
@@ -62,6 +66,7 @@ class HomeViewController: UIViewController {
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
         moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
+        moviesTableView.reloadData()
     }
 
     func setGradientBackground() {
@@ -110,12 +115,13 @@ extension HomeViewController: UITableViewDelegate {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movies.count
+        return viewModel.movies.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = moviesTableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier, for: indexPath) as! MovieTableViewCell
-        cell.setupData(with: movies[indexPath.row])
+
+        cell.setupData(with: viewModel.movies[indexPath.row])
 
         return cell
     }

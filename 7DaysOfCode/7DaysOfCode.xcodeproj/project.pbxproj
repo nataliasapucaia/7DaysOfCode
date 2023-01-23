@@ -18,6 +18,7 @@
 		D105C59D297ADC030067C223 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C59C297ADC030067C223 /* MovieModel.swift */; };
 		D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C59F297B032B0067C223 /* UIColor+Utils.swift */; };
 		D105C5A4297B107F0067C223 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5A3297B107F0067C223 /* MovieTableViewCell.swift */; };
+		D105C5A9297ECCC60067C223 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5A8297ECCC60067C223 /* String+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		D105C59C297ADC030067C223 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		D105C59F297B032B0067C223 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
 		D105C5A3297B107F0067C223 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
+		D105C5A8297ECCC60067C223 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				D105C594297ACD390067C223 /* ViewCode.swift */,
 				D105C59F297B032B0067C223 /* UIColor+Utils.swift */,
+				D105C5A8297ECCC60067C223 /* String+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				D105C59D297ADC030067C223 /* MovieModel.swift in Sources */,
 				D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */,
 				D105C583297AC7280067C223 /* SceneDelegate.swift in Sources */,
+				D105C5A9297ECCC60067C223 /* String+Utils.swift in Sources */,
 				D105C595297ACD390067C223 /* ViewCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

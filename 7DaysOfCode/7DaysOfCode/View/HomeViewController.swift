@@ -9,6 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    // MARK: Views
     let movies: [Movie] = [
         Movie(id: 1, title: "Órfã 2: A Origem", releaseDate: "2022-07-27", image: nil, overview: "", voteAverage: 7.2),
         Movie(id: 2, title: "Minions 2: A Origem de Gru", releaseDate: "2022-06-29", image: nil, overview: "", voteAverage: 7.8),
@@ -39,22 +40,37 @@ class HomeViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
-        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
 
         return tableView
     }()
 
+    // MARK: Life Cycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupView()
+        configureTableView()
+    }
 
+    // MARK: Functions
+    func configureTableView() {
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
+        moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
+    }
 
+    func setGradientBackground() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [UIColor.topColor.cgColor, UIColor.bottomColor.cgColor]
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 }
 
-extension HomeViewController: CodeView {
+// MARK: View Code
+
+extension HomeViewController: ViewCode {
     func buildVierHierarchy() {
 
         view.addSubview(titleLabel)
@@ -74,20 +90,19 @@ extension HomeViewController: CodeView {
     }
 
     func setUpAdditionalConfiguration() {
-
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        gradientLayer.colors = [UIColor.topColor.cgColor, UIColor.bottomColor.cgColor]
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        setGradientBackground()
     }
 }
+
+// MARK: UITableViewDelegate
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 152
     }
-
 }
+
+// MARK: UITableViewDataSource
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

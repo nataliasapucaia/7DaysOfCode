@@ -8,10 +8,13 @@
 import UIKit
 
 class MovieTableViewCell: UITableViewCell {
+    // MARK: Instance Properties
 
     static let identifier = "MovieTableViewCell"
 
-    let movieCoverImageView: UIImageView = {
+    // MARK: Views
+
+    let moviePosterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .red
@@ -25,7 +28,7 @@ class MovieTableViewCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .white
-        label.font = UIFont(name: "SFPro-Bold", size: 18)
+        label.font = UIFont(name: "SFPro-Bold", size: 20)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         return label
@@ -40,6 +43,8 @@ class MovieTableViewCell: UITableViewCell {
         return label
     }()
 
+    // MARK: Initialization
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -50,46 +55,31 @@ class MovieTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
+    // MARK: Functions
 
     public func setupData(with movie: Movie) {
         titleLabel.text = movie.title
-        releaseDateLabel.text = "Lançamento: \(formatReleaseDate(releaseDate: movie.releaseDate))"
-    }
-
-    func formatReleaseDate( releaseDate: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "YYYY-MM-dd"
-
-        let dateFormatted = DateFormatter()
-        dateFormatted.dateFormat = "dd/MM/YYYY"
-        
-
-        if let date = dateFormatter.date(from: releaseDate) {
-            return dateFormatted.string(from: date)
-        } else {
-           return "There was an error decoding the string"
-        }
+        releaseDateLabel.text = "Lançamento: \(movie.releaseDate.formatDate())"
     }
 }
 
-extension MovieTableViewCell: CodeView {
+// MARK: View Code
+
+extension MovieTableViewCell: ViewCode {
     func buildVierHierarchy() {
-        addSubview(movieCoverImageView)
+        addSubview(moviePosterImageView)
         addSubview(titleLabel)
         addSubview(releaseDateLabel)
     }
 
     func setUpConstraints() {
         NSLayoutConstraint.activate([
-            movieCoverImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            movieCoverImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            movieCoverImageView.widthAnchor.constraint(equalToConstant: 90),
-            movieCoverImageView.heightAnchor.constraint(equalToConstant: 120),
+            moviePosterImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
+            moviePosterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            moviePosterImageView.widthAnchor.constraint(equalToConstant: 90),
+            moviePosterImageView.heightAnchor.constraint(equalToConstant: 120),
 
-            titleLabel.leadingAnchor.constraint(equalTo: movieCoverImageView.trailingAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: moviePosterImageView.trailingAnchor, constant: 16),
             titleLabel.bottomAnchor.constraint(equalTo: centerYAnchor),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 

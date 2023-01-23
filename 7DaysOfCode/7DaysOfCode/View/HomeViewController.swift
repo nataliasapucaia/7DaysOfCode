@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .clear
-
+        tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
 
         return tableView
     }()
@@ -56,7 +56,6 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: CodeView {
     func buildVierHierarchy() {
-//        moviesTableView.addSubview(movieTitle)
 
         view.addSubview(titleLabel)
         view.addSubview(moviesTableView)
@@ -71,9 +70,6 @@ extension HomeViewController: CodeView {
             moviesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             moviesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             moviesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-
-//            movieTitle.centerXAnchor.constraint(equalTo: moviesTableView.centerXAnchor),
-//            movieTitle.centerYAnchor.constraint(equalTo: moviesTableView.centerYAnchor)
         ])
     }
 
@@ -87,6 +83,9 @@ extension HomeViewController: CodeView {
 }
 
 extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 152
+    }
 
 }
 
@@ -96,10 +95,8 @@ extension HomeViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.backgroundColor = .clear
-        cell.textLabel?.text = movies[indexPath.row].title
-        cell.textLabel?.textColor = .white
+        let cell = moviesTableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier, for: indexPath) as! MovieTableViewCell
+        cell.setupData(with: movies[indexPath.row])
 
         return cell
     }

@@ -9,20 +9,22 @@
 /* Begin PBXBuildFile section */
 		D105C581297AC7280067C223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C580297AC7280067C223 /* AppDelegate.swift */; };
 		D105C583297AC7280067C223 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C582297AC7280067C223 /* SceneDelegate.swift */; };
-		D105C585297AC7280067C223 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C584297AC7280067C223 /* ViewController.swift */; };
+		D105C585297AC7280067C223 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C584297AC7280067C223 /* HomeViewController.swift */; };
 		D105C58A297AC72A0067C223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D105C589297AC72A0067C223 /* Assets.xcassets */; };
 		D105C58D297AC72A0067C223 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D105C58B297AC72A0067C223 /* LaunchScreen.storyboard */; };
 		D105C595297ACD390067C223 /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C594297ACD390067C223 /* ViewCode.swift */; };
 		D105C59A297AD3220067C223 /* SF-Pro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D105C598297AD2490067C223 /* SF-Pro-Italic.ttf */; };
 		D105C59B297AD3260067C223 /* SF-Pro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D105C599297AD24A0067C223 /* SF-Pro.ttf */; };
 		D105C59D297ADC030067C223 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C59C297ADC030067C223 /* MovieModel.swift */; };
+		D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C59F297B032B0067C223 /* UIColor+Utils.swift */; };
+		D105C5A4297B107F0067C223 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5A3297B107F0067C223 /* MovieTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D105C57D297AC7280067C223 /* 7DaysOfCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 7DaysOfCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D105C580297AC7280067C223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D105C582297AC7280067C223 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D105C584297AC7280067C223 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D105C584297AC7280067C223 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D105C589297AC72A0067C223 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D105C58C297AC72A0067C223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D105C58E297AC72A0067C223 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -30,6 +32,8 @@
 		D105C598297AD2490067C223 /* SF-Pro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Italic.ttf"; sourceTree = "<group>"; };
 		D105C599297AD24A0067C223 /* SF-Pro.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro.ttf"; sourceTree = "<group>"; };
 		D105C59C297ADC030067C223 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		D105C59F297B032B0067C223 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		D105C5A3297B107F0067C223 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +66,15 @@
 		D105C57F297AC7280067C223 /* 7DaysOfCode */ = {
 			isa = PBXGroup;
 			children = (
+				D105C5A2297B0F650067C223 /* Model */,
+				D105C5A1297B0F550067C223 /* View */,
+				D105C59E297B030E0067C223 /* Utils */,
 				D105C597297AD20E0067C223 /* Fonts */,
 				D105C580297AC7280067C223 /* AppDelegate.swift */,
 				D105C582297AC7280067C223 /* SceneDelegate.swift */,
-				D105C584297AC7280067C223 /* ViewController.swift */,
 				D105C589297AC72A0067C223 /* Assets.xcassets */,
 				D105C58B297AC72A0067C223 /* LaunchScreen.storyboard */,
 				D105C58E297AC72A0067C223 /* Info.plist */,
-				D105C594297ACD390067C223 /* ViewCode.swift */,
-				D105C59C297ADC030067C223 /* MovieModel.swift */,
 			);
 			path = 7DaysOfCode;
 			sourceTree = "<group>";
@@ -82,6 +86,32 @@
 				D105C599297AD24A0067C223 /* SF-Pro.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D105C59E297B030E0067C223 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D105C594297ACD390067C223 /* ViewCode.swift */,
+				D105C59F297B032B0067C223 /* UIColor+Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D105C5A1297B0F550067C223 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D105C584297AC7280067C223 /* HomeViewController.swift */,
+				D105C5A3297B107F0067C223 /* MovieTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D105C5A2297B0F650067C223 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D105C59C297ADC030067C223 /* MovieModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +186,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D105C585297AC7280067C223 /* ViewController.swift in Sources */,
+				D105C585297AC7280067C223 /* HomeViewController.swift in Sources */,
 				D105C581297AC7280067C223 /* AppDelegate.swift in Sources */,
+				D105C5A4297B107F0067C223 /* MovieTableViewCell.swift in Sources */,
 				D105C59D297ADC030067C223 /* MovieModel.swift in Sources */,
+				D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */,
 				D105C583297AC7280067C223 /* SceneDelegate.swift in Sources */,
 				D105C595297ACD390067C223 /* ViewCode.swift in Sources */,
 			);

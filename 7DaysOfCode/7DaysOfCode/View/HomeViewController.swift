@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     // MARK: Views
-    let viewModel: HomeViewModel
+    let viewModel: HomeViewModelProtocol
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -44,27 +44,51 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.fetchMovies()
-        setupView()
         configureTableView()
+        bindViewModel()
+        setupState(.initial)
+        setupView()
+//        getPopularMovies()
     }
 
     // MARK: Initialization
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
 
         super.init(nibName: nil, bundle: nil)
     }
+//
+//    init() {
+//
+//        super.init(nibName: nil, bundle: nil)
+//    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: Functions
-    func configureTableView() {
+    func bindViewModel() {
+        viewModel.state.bind { [weak self] state in
+            self?.setupState(state)
+        }
+    }
+
+    func setupState(_ state: FetchMovieState) {
+        switch state {
+        case .initial:
+            break
+        case .data:
+            DispatchQueue.main.async {
+                self.moviesTableView.reloadData()
+            }
+        }
+    }
+
+    private func configureTableView() {
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
-        moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier)
-        moviesTableView.reloadData()
+        moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier) 
     }
 
     func setGradientBackground() {
@@ -79,7 +103,7 @@ class HomeViewController: UIViewController {
 //    private var movies: [Movie] = [] {
 //        didSet {
 //            DispatchQueue.main.async {
-//                self.tableView.reloadData()
+//                self.moviesTableView.reloadData()
 //            }
 //        }
 //    }

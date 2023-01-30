@@ -57,11 +57,6 @@ class HomeViewController: UIViewController {
 
         super.init(nibName: nil, bundle: nil)
     }
-//
-//    init() {
-//
-//        super.init(nibName: nil, bundle: nil)
-//    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -91,12 +86,6 @@ class HomeViewController: UIViewController {
         moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: MovieTableViewCell.identifier) 
     }
 
-    func setGradientBackground() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = self.view.bounds
-        gradientLayer.colors = [UIColor.topColor.cgColor, UIColor.bottomColor.cgColor]
-        self.view.layer.insertSublayer(gradientLayer, at: 0)
-    }
 
     //se não tivesse viewModel
 //    private var requestNetworking = Network()
@@ -136,7 +125,7 @@ extension HomeViewController: ViewCode {
     }
 
     func setUpAdditionalConfiguration() {
-        setGradientBackground()
+        view.setGradientBackground()
     }
 }
 
@@ -145,6 +134,11 @@ extension HomeViewController: ViewCode {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 152
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewModel = DetailsViewModel(movie: viewModel.movies[indexPath.row])
+        self.navigationController?.pushViewController(DetailsViewController(viewModel: viewModel), animated: true)
     }
 }
 
@@ -157,6 +151,7 @@ extension HomeViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = moviesTableView.dequeueReusableCell(withIdentifier: MovieTableViewCell.identifier, for: indexPath) as! MovieTableViewCell
+        cell.selectionStyle = .none
         cell.setupData(with: viewModel.movies[indexPath.row])
 
         return cell

@@ -24,6 +24,9 @@
 		D105C5AE297EFC300067C223 /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = D105C5AD297EFC300067C223 /* Keys.plist */; };
 		D105C5B2297F05360067C223 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D105C5B1297F05360067C223 /* HomeViewModel.swift */; };
 		D141A549298043A600A66A91 /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141A548298043A600A66A91 /* Bindable.swift */; };
+		D141A54B29840C3B00A66A91 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141A54A29840C3B00A66A91 /* DetailsViewController.swift */; };
+		D141A54D2984444200A66A91 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141A54C2984444200A66A91 /* DetailsViewModel.swift */; };
+		D141A54F29844AA800A66A91 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141A54E29844AA800A66A91 /* UIViewController+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		D105C5AD297EFC300067C223 /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		D105C5B1297F05360067C223 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D141A548298043A600A66A91 /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
+		D141A54A29840C3B00A66A91 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		D141A54C2984444200A66A91 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		D141A54E29844AA800A66A91 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
 		EFFF92E11F77F8BD3975D928 /* Pods_7DaysOfCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_7DaysOfCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +130,7 @@
 				D105C59F297B032B0067C223 /* UIColor+Utils.swift */,
 				D105C5A8297ECCC60067C223 /* String+Utils.swift */,
 				D141A548298043A600A66A91 /* Bindable.swift */,
+				D141A54E29844AA800A66A91 /* UIViewController+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -133,6 +140,7 @@
 			children = (
 				D105C584297AC7280067C223 /* HomeViewController.swift */,
 				D105C5A3297B107F0067C223 /* MovieTableViewCell.swift */,
+				D141A54A29840C3B00A66A91 /* DetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				D105C5B1297F05360067C223 /* HomeViewModel.swift */,
+				D141A54C2984444200A66A91 /* DetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,8 +297,10 @@
 			files = (
 				D105C585297AC7280067C223 /* HomeViewController.swift in Sources */,
 				D105C581297AC7280067C223 /* AppDelegate.swift in Sources */,
+				D141A54F29844AA800A66A91 /* UIViewController+Utils.swift in Sources */,
 				D105C5A4297B107F0067C223 /* MovieTableViewCell.swift in Sources */,
 				D105C5B2297F05360067C223 /* HomeViewModel.swift in Sources */,
+				D141A54D2984444200A66A91 /* DetailsViewModel.swift in Sources */,
 				D141A549298043A600A66A91 /* Bindable.swift in Sources */,
 				D105C59D297ADC030067C223 /* MovieModel.swift in Sources */,
 				D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */,
@@ -297,6 +308,7 @@
 				D105C583297AC7280067C223 /* SceneDelegate.swift in Sources */,
 				D105C5A9297ECCC60067C223 /* String+Utils.swift in Sources */,
 				D105C595297ACD390067C223 /* ViewCode.swift in Sources */,
+				D141A54B29840C3B00A66A91 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

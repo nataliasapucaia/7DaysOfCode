@@ -63,7 +63,7 @@ class MovieTableViewCell: UITableViewCell {
         configureImage(imageURL: movie.posterPath)
     }
 
-    private func configureImage(imageURL: String) {
+    func configureImage(imageURL: String) {
         let url = URL(string: "https://image.tmdb.org/t/p/w500/\(imageURL)")
         moviePosterImageView.kf.setImage(with: url)
     }

@@ -76,14 +76,9 @@ class DetailsViewController: UIViewController {
 
     private func setupData(movie: Movie) {
         titleLabel.text = movie.title
-        configureImage(imageURL: movie.posterPath)
+        posterImageView.configureImage(movie.posterPath)
         voteAverageLabel.text = "Classificação dos usuários: \(movie.voteAverage)"
         overviewTextView.text = movie.overview
-    }
-
-    private func configureImage(imageURL: String) {
-        let url = URL(string: "https://image.tmdb.org/t/p/w500/\(imageURL)")
-        posterImageView.kf.setImage(with: url)
     }
 
     private func setupNavigationLayout() {

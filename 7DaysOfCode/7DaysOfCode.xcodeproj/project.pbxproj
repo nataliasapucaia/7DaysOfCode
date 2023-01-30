@@ -27,6 +27,7 @@
 		D141A54B29840C3B00A66A91 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141A54A29840C3B00A66A91 /* DetailsViewController.swift */; };
 		D141A54D2984444200A66A91 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141A54C2984444200A66A91 /* DetailsViewModel.swift */; };
 		D141A54F29844AA800A66A91 /* UIViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D141A54E29844AA800A66A91 /* UIViewController+Utils.swift */; };
+		D1DC8844298800A3001532CB /* UIImageView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1DC8843298800A3001532CB /* UIImageView+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		D141A54A29840C3B00A66A91 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D141A54C2984444200A66A91 /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		D141A54E29844AA800A66A91 /* UIViewController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Utils.swift"; sourceTree = "<group>"; };
+		D1DC8843298800A3001532CB /* UIImageView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Utils.swift"; sourceTree = "<group>"; };
 		EFFF92E11F77F8BD3975D928 /* Pods_7DaysOfCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_7DaysOfCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				D105C5A8297ECCC60067C223 /* String+Utils.swift */,
 				D141A548298043A600A66A91 /* Bindable.swift */,
 				D141A54E29844AA800A66A91 /* UIViewController+Utils.swift */,
+				D1DC8843298800A3001532CB /* UIImageView+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				D105C5B2297F05360067C223 /* HomeViewModel.swift in Sources */,
 				D141A54D2984444200A66A91 /* DetailsViewModel.swift in Sources */,
 				D141A549298043A600A66A91 /* Bindable.swift in Sources */,
+				D1DC8844298800A3001532CB /* UIImageView+Utils.swift in Sources */,
 				D105C59D297ADC030067C223 /* MovieModel.swift in Sources */,
 				D105C5A0297B032B0067C223 /* UIColor+Utils.swift in Sources */,
 				D105C5AC297EFA860067C223 /* Network.swift in Sources */,

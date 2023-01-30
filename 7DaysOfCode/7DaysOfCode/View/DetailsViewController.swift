@@ -18,6 +18,9 @@ class DetailsViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont(name: "SFPro-Bold", size: 28)
         label.textColor = .white
+        label.numberOfLines = 0
+        label.lineBreakMode = .byWordWrapping
+        label.textAlignment = .center
 
         return label
     }()
@@ -50,6 +53,7 @@ class DetailsViewController: UIViewController {
         return textView
 
     }()
+
     // MARK: Life Cycle
 
     override func viewDidLoad() {
@@ -70,18 +74,21 @@ class DetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setupData(movie: Movie) {
+    private func setupData(movie: Movie) {
         titleLabel.text = movie.title
         configureImage(imageURL: movie.posterPath)
         voteAverageLabel.text = "Classificação dos usuários: \(movie.voteAverage)"
         overviewTextView.text = movie.overview
     }
 
-    func configureImage(imageURL: String) {
+    private func configureImage(imageURL: String) {
         let url = URL(string: "https://image.tmdb.org/t/p/w500/\(imageURL)")
         posterImageView.kf.setImage(with: url)
     }
 
+    private func setupNavigationLayout() {
+        self.navigationController?.navigationBar.tintColor = .white
+    }
 }
 
 extension DetailsViewController: ViewCode {
@@ -95,7 +102,8 @@ extension DetailsViewController: ViewCode {
     func setUpConstraints() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
 
             posterImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             posterImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32),
@@ -114,5 +122,6 @@ extension DetailsViewController: ViewCode {
 
     func setUpAdditionalConfiguration() {
         view.setGradientBackground()
+        setupNavigationLayout()
     }
 }

@@ -126,6 +126,7 @@ extension HomeViewController: ViewCode {
 
     func setUpAdditionalConfiguration() {
         view.setGradientBackground()
+        self.navigationItem.backButtonTitle = "Voltar"
     }
 }
 
